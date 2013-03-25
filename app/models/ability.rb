@@ -45,6 +45,10 @@ class Ability
         rules << project_admin_rules
       end
 
+      if project.public
+        rules << project_public_rules
+      end
+
       rules.flatten
     end
 
@@ -103,6 +107,10 @@ class Ability
         :rename_project,
         :remove_project
       ]
+    end
+
+    def project_public_rules
+      project_report_rules
     end
 
     def group_abilities user, group

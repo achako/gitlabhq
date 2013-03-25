@@ -26,6 +26,8 @@ class DashboardController < ApplicationController
 
   def projects
     @projects = case params[:scope]
+                when 'public' then
+                  Project.public_only
                 when 'personal' then
                   @projects.personal(current_user)
                 when 'joined' then

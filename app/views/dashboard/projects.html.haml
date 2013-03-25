@@ -15,6 +15,8 @@
     %ul.nav.nav-pills.nav-stacked
       = nav_tab :scope, nil do
         = link_to "All", projects_dashboard_path
+      = nav_tab :scope, 'public' do
+        = link_to "Public", projects_dashboard_path(scope: 'public')
       = nav_tab :scope, 'personal' do
         = link_to "Personal", projects_dashboard_path(scope: 'personal')
       = nav_tab :scope, 'joined' do
