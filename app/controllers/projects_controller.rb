@@ -10,8 +10,8 @@ class ProjectsController < ProjectResourceController
   layout 'application', only: [:new, :create]
 
   def new
-    @project = Project.new
-    @project.public=true;
+    @project = Project.new( :public => true );
+#    @project.public=true;
   end
 
   def edit
