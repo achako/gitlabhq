@@ -11,6 +11,7 @@ class ProjectsController < ProjectResourceController
 
   def new
     @project = Project.new
+    @project.public=true;
   end
 
   def edit
