@@ -33,6 +33,7 @@ module Projects
       end
 
       # Disable less important features by default
+      @project.public = true
       @project.wall_enabled = false
       @project.snippets_enabled = false
 
