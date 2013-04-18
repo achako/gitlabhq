@@ -136,10 +136,6 @@ class Project < ActiveRecord::Base
       UsersProject.access_roles
     end
   end
-  
-  def initialize
-  	public = true
-  end
 
   def team
     @team ||= ProjectTeam.new(self)
