@@ -37,12 +37,16 @@ class Ability
       elsif team.reporters.include?(user)
         rules << project_report_rules
 
-      elsif team.guests.include?(user) or project.public?
+      elsif team.guests.include?(user)
         rules << project_guest_rules
       end
 
       if project.owner == user || user.admin?
         rules << project_admin_rules
+      end
+      
+      if project.public?
+      	rules << project_report_rules
       end
 
       rules.flatten
