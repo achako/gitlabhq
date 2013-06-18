@@ -20,6 +20,7 @@ module Projects
       }
 
       @project = Project.new(default_opts.merge(params))
+      @project.public = true
 
       # Parametrize path for project
       #
