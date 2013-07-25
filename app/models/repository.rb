@@ -34,9 +34,9 @@ class Repository
   end
 
   def branch_names
-    Rails.cache.fetch(cache_key(:branch_names)) do
-      raw_repository.branch_names
-    end
+#    Rails.cache.fetch(cache_key(:branch_names)) do
+     raw_repository.branch_names
+#    end
   end
 
   def tag_names
