@@ -37,6 +37,10 @@ class Snippet < ActiveRecord::Base
   scope :fresh,   -> { order("created_at DESC") }
   scope :expired, -> { where(["expires_at IS NOT NULL AND expires_at < ?", Time.current]) }
   scope :non_expired, -> { where(["expires_at IS NULL OR expires_at > ?", Time.current]) }
+  
+  def initialize
+  	private = false
+  end
 
   def self.content_types
     [
