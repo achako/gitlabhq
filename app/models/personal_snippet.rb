@@ -16,4 +16,9 @@
 #
 
 class PersonalSnippet < Snippet
+  
+  def initialize
+  	private = false
+  end
+
 end
