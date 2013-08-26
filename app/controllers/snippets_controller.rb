@@ -45,6 +45,7 @@ class SnippetsController < ApplicationController
 
   def new
     @snippet = PersonalSnippet.new
+    @snippet.private = false
   end
 
   def create
