@@ -20,7 +20,7 @@
             %i.icon-tag
             = tag.name
           %small
-            = truncate(tag.message || '', length: 70)
+            = truncate(tag.message.force_encoding('utf-8') || '', length: 70)
           .pull-right
             %small.cdark
               %i.icon-calendar
